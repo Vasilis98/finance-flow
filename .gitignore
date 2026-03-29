@@ -1,0 +1,15 @@
+# WebStorm
+.idea/
+
+# Node.js
+node_modules/
+
+# Angular build output
+dist/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Logs
+*.log
