@@ -71,3 +71,40 @@ main h2 {
     color: #1a1a2e;
     margin-bottom: 24px;
 }
+
+.cards-grid {
+    display: flex;
+}
+
+.card {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    border: 1px solid #e8e8e8;
+}
+
+.card__label {
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card__amount {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.card__amount--income {
+    color: #2ecc71;
+}
+
+.card__amount--expenses {
+    color: #e74c3c;
+}
+
+.card__amount--balance {
+    color: #1a1a2e;
+}
