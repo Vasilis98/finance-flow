@@ -1,0 +1,28 @@
+@use 'variables' as *;
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 52px);
+}
+
+main {
+  flex: 1;
+  padding: $spacing-xl;
+  background-color: $color-background;
+
+  h2 {
+    font-size: clamp(18px, 3vw, $font-size-xl);
+    font-weight: 600;
+    color: $color-primary;
+    margin-bottom: $spacing-lg;
+  }
+}
+
+footer {
+  background-color: $color-primary;
+  color: $color-text-muted;
+  padding: $spacing-md $spacing-lg;
+  font-size: 13px;
+  text-align: center;
+}

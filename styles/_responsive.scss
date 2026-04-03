@@ -1,0 +1,43 @@
+@use 'variables' as *;
+
+@media (min-width: $breakpoint-tablet) {
+  .cards-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  .layout {
+    flex-direction: row;
+  }
+
+  aside {
+    display: block;
+  }
+
+  .cards-grid {
+    flex-wrap: nowrap;
+  }
+
+  .card {
+    flex: 1;
+  }
+}
+
+@media (max-width: 767px) {
+  .transactions__header {
+    display: none;
+  }
+
+  .transactions__row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: $spacing-md 0;
+  }
+}
