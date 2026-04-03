@@ -1,0 +1,62 @@
+@use 'variables' as *;
+
+.transactions {
+  background-color: $color-white;
+  border-radius: $border-radius;
+  padding: $spacing-lg;
+  border: 1px solid $color-border;
+
+  &__title {
+    font-size: $font-size-base;
+    font-weight: 600;
+    color: $color-primary;
+    margin-bottom: 20px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 0 0 $spacing-sm 0;
+    border-bottom: 1px solid $color-border;
+
+    span {
+      font-size: $font-size-xs;
+      font-weight: 600;
+      color: $color-text-muted;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 14px 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+
+    span {
+      font-size: $font-size-sm;
+      color: $color-text;
+    }
+  }
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px $spacing-sm;
+  border-radius: $border-radius-sm;
+  width: fit-content;
+  white-space: nowrap;
+
+  &--food { background-color: #fff3e0; color: #e65100; }
+  &--income { background-color: #e8f5e9; color: #2e7d32; }
+  &--entertainment { background-color: #f3e5f5; color: #6a1b9a; }
+  &--utilities { background-color: #e3f2fd; color: #1565c0; }
+}
+
+.amount {
+  &--income { color: $color-income; font-weight: 600; }
+  &--expenses { color: $color-expenses; font-weight: 600; }
+}
