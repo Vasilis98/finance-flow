@@ -23,7 +23,7 @@ header {
 }
 
 header h1 {
-    font-size: 20px;
+    font-size: clamp(16px, 2.5vw, 20px);
     font-weight: 600;
     letter-spacing: 1px;
 }
@@ -31,11 +31,13 @@ header h1 {
 /* Layout */
 .layout {
     display: flex;
+    flex-direction: column;
     min-height: calc(100vh - 52px);
 }
 
 /* Sidebar */
 aside {
+    display: none;
     width: 240px;
     min-width: 240px;
     background-color: #16213e;
@@ -66,7 +68,7 @@ main {
 }
 
 main h2 {
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: 600;
     color: #1a1a2e;
     margin-bottom: 24px;
@@ -74,6 +76,9 @@ main h2 {
 
 .cards-grid {
     display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
 }
 
 .card {
@@ -206,4 +211,56 @@ main h2 {
 .amount--expenses {
     color: #e74c3c;
     font-weight: 600;
+}
+
+/* ================================
+   TABLET — 768px+
+================================ */
+@media (min-width: 768px) {
+
+    .cards-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 12px);
+    }
+
+}
+
+/* ================================
+   DESKTOP — 1024px+
+================================ */
+@media (min-width: 1024px) {
+
+    .layout {
+        flex-direction: row;
+    }
+
+    aside {
+        display: block;
+    }
+
+    .cards-grid {
+        flex-wrap: nowrap;
+    }
+
+    .card {
+        flex: 1;
+    }
+
+}
+
+@media (max-width: 767px) {
+    .transactions__header {
+        display: none;
+    }
+
+    .transactions__row {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 16px 0;
+    }
 }
