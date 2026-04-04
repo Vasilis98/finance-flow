@@ -1,29 +1,31 @@
-import { TransactionService } from './transaction.service';
+import { ApiService } from './api.service';
 
-const service = new TransactionService();
-
-
-console.log("All transactions:", service.getAll());
+async function main() {
+    const api = new ApiService();
 
 
-console.log("Total Income:", service.getTotalIncome());
+    try {
 
+        const transactions = await api.getTransactions();
+        console.log("Transactions:", transactions);
 
-console.log("Total Expenses:", service.getTotalExpenses());
+        const newTransaction = await api.createTransaction({
+            description: "Coffee",
+            amount: 3.50,
+            category: "Food",
+            date: "2026-04-01",
+            isIncome: false
+        });
+        console.log("New transaction:", newTransaction);
 
+        const deleted = await api.deleteTransaction(1);
+        console.log("Deleted:", deleted);
 
-const newTransaction = service.add({
-    description: "Bus ticket",
-    amount: 2.50,
-    category: "Transport",
-    date: "2026-04-01",
-    isIncome: false
-});
-console.log("Added transaction:", newTransaction);
+    } catch (error) {
+        console.log("Error:", error);
+    } finally {
+        console.log("Τελείωσα!");
+    }
+}
 
-
-console.log("Get by id 1:", service.getById(1));
-
-
-console.log("Delete id 1:", service.delete(1));
-console.log("After delete:", service.getAll());
+main();
